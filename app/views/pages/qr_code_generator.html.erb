@@ -1,0 +1,18 @@
+<h1 class="title "style="--top-bar-background: #00848e; --top-bar-background-lighter: #1d9ba4; --top-bar-color: #f9fafb; --p-frame-offset: 0px; padding: 20px; text-align: center; font-family: 'Mochiy Pop P One', sans-serif;">
+  <ion-icon name="qr-code-sharp" size="large"></ion-icon> 
+  YOUR QRCODE
+</h1>
+<div class="container">
+  <div class="box">
+    <%= form_tag :qr_code_download, method: :get do |f| %>
+      <div class="field">
+        <%= label_tag 'Text or URL', nil, class: "label" %>
+        <%= text_field_tag :content, nil, required: true, class: "input is-link is-focused" %>
+      </div>
+
+      <div class="actions">
+        <%= submit_tag 'Generate QR code', class: "button is-link is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>
